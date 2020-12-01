@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief include declarations and documentation for the functions
  *
- * <Add Extended Description Here>
+ * Each declaration provides comments with a description of the function,   	* the inputs, and return value. 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Andrea Alvarez
+ * @date 11/1/2020
  *
  */
 #ifndef __STATS_H__
@@ -24,17 +24,64 @@
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
- *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
- */
+* @brief print_statistics
+* A function that prints the statistics of an array including minimum,  
+* maximum, mean, and median.
+* @param test Array with the numbers
+*/
+void print_statistics(int MinimunValue,int MaximunValue,float MeanValue,float MediamValue);
 
+
+/**
+* @brief print_array
+* Given an array of data and a length, prints the array to the screen.
+* @param test Array with the numbers
+*/
+void print_array(unsigned char testArray[]);
+
+/**
+* @brief find_median
+* Given an array of data and a length, returns the median value.
+* @param SortArray with the numbers in descending order
+* @param NoElem size of the array
+* @return Mediam with the result
+*/
+float find_median(unsigned char SortArray[],int NoElem); 
+
+/**
+* @brief find_mean
+* Given an array of data and a length, returns the mean value.
+* @param TestArray with the numbers of the array
+* @param NoElem size of the array
+* @return Mean with the result
+*/
+float find_mean(unsigned char testArray[],int NoElem);
+
+/**
+* @brief find_maximun
+* Given an array of data and a length, returns the maximun value.
+* @param TestArray with the numbers of the array
+* @param NoElem size of the array
+* @return Maximun with the result
+*/
+int find_maximun(unsigned char testArray[], int NoElem);
+
+/**
+* @brief find_minimun
+* Given an array of data and a length, returns the minimun value.
+* @param TestArray with the numbers of the array
+* @param NoElem size of the array
+* @return Maximun with the result
+*/
+int find_minimun(unsigned char testArray[], int NoElem);
+
+/**
+* @brief sort_array
+* Given an array of data and a length, sorts the array from largest to    * smallest.
+* @param TestArray with the numbers of the array
+* @param NoElem size of the array
+* @return SortArray with the result
+*/
+unsigned char * sort_array(unsigned char testArray[], int NumElem); 
 
 #endif /* __STATS_H__ */

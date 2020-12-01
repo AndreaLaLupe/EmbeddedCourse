@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c
+ * @brief analyze of a array and report analytics
  *
- * <Add Extended Description Here>
+ * Functions that can analyze an array of unsigned char data items and   
+ * report analytics on the maximum, minimum, mean, and median of the data
+ * set.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Andrea Alvarez
+ * @date 11/1/2020
  *
  */
 
@@ -41,3 +43,31 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(int MinimunValue,int MaximunValue,float MeanValue,float MediamValue)
+{
+}
+
+void print_array(unsigned char testArray[]) 
+{
+}
+
+float find_median(unsigned char SortArray[],int NoElem) 
+{
+}
+
+float find_mean(unsigned char testArray[],int NoElem)
+{
+}
+
+int find_maximun(unsigned char testArray[], int NoElem)
+{
+}
+
+int find_minimun(unsigned char testArray[], int NoElem)
+{
+}
+
+unsigned char * sort_array(unsigned char testArray[], int NumElem) 
+{
+}
