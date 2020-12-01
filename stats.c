@@ -21,9 +21,9 @@
  *
  */
 
-
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -38,36 +38,115 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+   int NoElements = sizeof(test)/sizeof(test[0]);
+   int MinValue, MaxValue;
+   float MeValue, MedValue;
+   
+  /* Statistics and Printing Functions Go Here */  
+  
+  printf("\n Array before the sort \n");
+  print_array(test);
+  
+  MedValue=find_median(sort_array(test,NoElements),NoElements);
+  MeValue=find_mean(test,NoElements);
+  MaxValue=find_maximun(test,NoElements);
+  MinValue=find_minimun(test,NoElements);
+  print_statistics(MinValue,MaxValue,MeValue,MedValue);
+  
 
+  printf("\n Array after the sort \n");
+  sort_array(test,NoElements);
+  print_array(test);
 }
-
-/* Add other Implementation File Code Here */
 
 void print_statistics(int MinimunValue,int MaximunValue,float MeanValue,float MediamValue)
 {
-}
-
+  	printf("\n The minimum of the array is %d", MinimunValue);
+  	printf("\n The maximum of the array is %d", MaximunValue);
+  	printf("\n The mean of the array is %0.2f", MeanValue);
+  	printf("\n The mediam of the array is %0.2f \n", MediamValue);
+} 
+  
 void print_array(unsigned char testArray[]) 
 {
-}
+    printf("\n The values of the array are:");
+  	for(int i=0; i<SIZE; i++)
+  	{
+  		printf("\n %d", testArray[i]);
+  	}
+}  
 
 float find_median(unsigned char SortArray[],int NoElem) 
 {
+    float Mediam;
+    int middle, next;
+    middle=NoElem/2;
+    next=middle-1;
+  	if(NoElem%2==0)
+  	{
+  		Mediam=(SortArray[middle]+SortArray[next])/2;
+  		return Mediam;
+  		
+  	}
+  	else
+  	{
+		Mediam=SortArray[next];
+		return Mediam;
+  	}
 }
 
 float find_mean(unsigned char testArray[],int NoElem)
 {
+	float sum, Mean;
+	
+	for(int i=0; i<SIZE; i++)
+	{
+		sum= sum+testArray[i];
+	}
+	Mean=sum/NoElem;
+	return Mean;	
 }
 
 int find_maximun(unsigned char testArray[], int NoElem)
 {
+	for(int i=0; i<NoElem; i++)
+	{
+		if(testArray[0]<testArray[i])
+		{
+			testArray[0]=testArray[i];
+		}
+	}
+	return testArray[0];
 }
 
 int find_minimun(unsigned char testArray[], int NoElem)
 {
+	for(int i=0; i<NoElem; i++)
+	{
+		if(testArray[0]>testArray[i])
+		{
+			testArray[0]=testArray[i];
+		}
+	}
+	return testArray[0];
 }
 
 unsigned char * sort_array(unsigned char testArray[], int NumElem) 
 {
+  int max;
+  
+  for(int i=0; i<NumElem; i++)
+  {
+  	for(int j=i+1; j<NumElem; j++)
+  	{
+  		if(testArray[i]<testArray[j])
+  		{
+  			max=testArray[i];
+  			testArray[i]=testArray[j];
+  			testArray[j]=max;
+  		}
+  	}
+  }
+  return testArray;
 }
+/* Add other Implementation File Code Here */
