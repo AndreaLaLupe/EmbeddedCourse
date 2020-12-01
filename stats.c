@@ -39,12 +39,11 @@ void main() {
 
   /* Other Variable Declarations Go Here */
    int NoElements = sizeof(test)/sizeof(test[0]);
-   int MinValue, MaxValue;
-   float MeValue, MedValue;
+   int MinValue, MaxValue, MeValue, MedValue;
    
   /* Statistics and Printing Functions Go Here */  
   
-  printf("\n Array before the sort \n");
+  sort_array(test,NoElements);
   print_array(test);
   
   MedValue=find_median(sort_array(test,NoElements),NoElements);
@@ -53,18 +52,14 @@ void main() {
   MinValue=find_minimun(test,NoElements);
   print_statistics(MinValue,MaxValue,MeValue,MedValue);
   
-
-  printf("\n Array after the sort \n");
-  sort_array(test,NoElements);
-  print_array(test);
 }
 
-void print_statistics(int MinimunValue,int MaximunValue,float MeanValue,float MediamValue)
+void print_statistics(int MinimunValue,int MaximunValue,int MeanValue,int MediamValue)
 {
   	printf("\n The minimum of the array is %d", MinimunValue);
   	printf("\n The maximum of the array is %d", MaximunValue);
-  	printf("\n The mean of the array is %0.2f", MeanValue);
-  	printf("\n The mediam of the array is %0.2f \n", MediamValue);
+  	printf("\n The mean of the array is %d", MeanValue);
+  	printf("\n The mediam of the array is %d \n", MediamValue);
 } 
   
 void print_array(unsigned char testArray[]) 

@@ -29,7 +29,7 @@
 * maximum, mean, and median.
 * @param test Array with the numbers
 */
-void print_statistics(int MinimunValue,int MaximunValue,float MeanValue,float MediamValue);
+void print_statistics(int MinimunValue,int MaximunValue,int MeanValue,int MediamValue);
 
 
 /**
